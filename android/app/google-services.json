@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "631428748489",
+    "project_id": "todo-c10-sat-7c6dc",
+    "storage_bucket": "todo-c10-sat-7c6dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631428748489:android:1905953d9aa60ff6c2a918",
+        "android_client_info": {
+          "package_name": "com.example.personal_scheduler_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8HRhEXj9bd0mziLfQR6lGoAVd93IPMww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631428748489:android:fbd2ef260d1d6b3ec2a918",
+        "android_client_info": {
+          "package_name": "com.example.todo_c10_sat_route"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8HRhEXj9bd0mziLfQR6lGoAVd93IPMww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
