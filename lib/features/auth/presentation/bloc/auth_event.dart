@@ -13,8 +13,4 @@ class AuthEvent with _$AuthEvent {
   }) = RegisterEvent;
   const factory AuthEvent.resetPasswordEvent({required String email}) =
       ResetPasswordEvent;
-  const factory AuthEvent.uploadProfileImageEvent({
-    required String uid,
-    required File imageFile,
-  }) = UploadProfileImageEvent;
 }

@@ -9,7 +9,6 @@ import 'package:personal_scheduler_app/features/auth/domain/use_cases/login_use_
 import 'package:personal_scheduler_app/features/auth/domain/use_cases/register_use_case.dart';
 import 'package:personal_scheduler_app/features/auth/domain/use_cases/reset_password_use_case.dart';
 import 'package:injectable/injectable.dart';
-import 'package:personal_scheduler_app/features/auth/domain/use_cases/upload_profile_picture_use_case.dart';
 part 'auth_event.dart';
 part 'auth_state.dart';
 part 'auth_bloc.freezed.dart';
@@ -19,10 +18,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final LoginUseCase loginUseCase;
   final RegisterUseCase registerUseCase;
   final ResetPasswordUseCase resetPasswordUseCase;
-  final UploadProfileImageUseCase uploadProfileImageUseCase;
-  AuthBloc(this.loginUseCase, this.registerUseCase, this.resetPasswordUseCase,
-      this.uploadProfileImageUseCase)
-      : super(const AuthState()) {
+  AuthBloc(
+    this.loginUseCase,
+    this.registerUseCase,
+    this.resetPasswordUseCase,
+  ) : super(const AuthState()) {
     on<LoginEvent>((event, emit) async {
       emit(state.copyWith(
         loginStatus: RequestStatus.loading,
@@ -65,22 +65,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(state.copyWith(
               registerStatus: RequestStatus.success, userModelRegister: model));
         },
-      );
-    });
-
-    on<UploadProfileImageEvent>((event, emit) async {
-      emit(state.copyWith(profileImageStatus: RequestStatus.loading));
-      final result =
-          await uploadProfileImageUseCase(event.uid, event.imageFile);
-      result.fold(
-        (failure) => emit(state.copyWith(
-          profileImageStatus: RequestStatus.failure,
-          profileImageFailure: failure,
-        )),
-        (user) => emit(state.copyWith(
-          profileImageStatus: RequestStatus.success,
-          updatedUser: user,
-        )),
       );
     });
   }

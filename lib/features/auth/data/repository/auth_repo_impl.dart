@@ -49,15 +49,4 @@ class AuthRepoImpl implements AuthRepo {
       return Left(RemoteFailures(e.toString()));
     }
   }
-
-  @override
-  Future<Either<Failures, UserModel>> uploadProfileImage(
-      String uid, File imageFile) async {
-    try {
-      final user = await remoteDataSource.uploadProfileImage(uid, imageFile);
-      return Right(user);
-    } catch (e) {
-      return Left(RemoteFailures(e.toString()));
-    }
-  }
 }

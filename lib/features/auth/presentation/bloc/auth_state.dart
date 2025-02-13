@@ -9,8 +9,5 @@ class AuthState with _$AuthState {
     @Default(RequestStatus.init) RequestStatus registerStatus,
     UserModel? userModelRegister,
     Failures? registerFailures,
-    @Default(RequestStatus.init) RequestStatus profileImageStatus,
-    Failures? profileImageFailure,
-    UserModel? updatedUser,
   }) = _AuthState;
 }

@@ -71,30 +71,6 @@ class AuthDataSourceImpl implements AuthDataSource {
   }
 
   @override
-  Future<UserModel> uploadProfileImage(String uid, File imageFile) async {
-    try {
-      // Upload image to Firebase Storage
-      final ref = storage.ref().child('profile_images/$uid.jpg');
-      await ref.putFile(imageFile);
-      final url = await ref.getDownloadURL();
-
-      // Update Firestore with new profile image URL
-      await firestore.collection('users').doc(uid).update({
-        'profileImageUrl': url,
-      });
-
-      // Update Firebase Auth user's photoURL
-      await firebaseAuth.currentUser?.updatePhotoURL(url);
-
-      // Fetch updated user data
-      final doc = await firestore.collection('users').doc(uid).get();
-      return UserModel.fromFirestore(doc.data()!);
-    } catch (e) {
-      throw Exception(e.toString());
-    }
-  }
-
-  @override
   Future<void> resetPassword(String email) async {
     await firebaseAuth.sendPasswordResetEmail(email: email);
   }

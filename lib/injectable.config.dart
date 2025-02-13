@@ -22,8 +22,6 @@ import 'features/auth/domain/repository/auth_repo.dart' as _i38;
 import 'features/auth/domain/use_cases/login_use_case.dart' as _i352;
 import 'features/auth/domain/use_cases/register_use_case.dart' as _i87;
 import 'features/auth/domain/use_cases/reset_password_use_case.dart' as _i276;
-import 'features/auth/domain/use_cases/upload_profile_picture_use_case.dart'
-    as _i308;
 import 'features/auth/presentation/bloc/auth_bloc.dart' as _i363;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -54,13 +52,10 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i352.LoginUseCase(gh<_i38.AuthRepo>()));
     gh.factory<_i276.ResetPasswordUseCase>(
         () => _i276.ResetPasswordUseCase(gh<_i38.AuthRepo>()));
-    gh.factory<_i308.UploadProfileImageUseCase>(
-        () => _i308.UploadProfileImageUseCase(gh<_i38.AuthRepo>()));
     gh.factory<_i363.AuthBloc>(() => _i363.AuthBloc(
           gh<_i352.LoginUseCase>(),
           gh<_i87.RegisterUseCase>(),
           gh<_i276.ResetPasswordUseCase>(),
-          gh<_i308.UploadProfileImageUseCase>(),
         ));
     return this;
   }

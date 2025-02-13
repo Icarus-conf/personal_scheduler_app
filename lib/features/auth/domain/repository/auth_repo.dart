@@ -13,6 +13,4 @@ abstract class AuthRepo {
     File? imageFile,
   );
   Future<Either<Failures, void>> resetPassword(String email);
-  Future<Either<Failures, UserModel>> uploadProfileImage(
-      String uid, File imageFile);
 }

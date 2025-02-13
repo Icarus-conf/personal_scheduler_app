@@ -24,8 +24,6 @@ mixin _$AuthEvent {
             String email, String password, String name, File? imageFile)
         registerEvent,
     required TResult Function(String email) resetPasswordEvent,
-    required TResult Function(String uid, File imageFile)
-        uploadProfileImageEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,7 +34,6 @@ mixin _$AuthEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult? Function(String email)? resetPasswordEvent,
-    TResult? Function(String uid, File imageFile)? uploadProfileImageEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,7 +44,6 @@ mixin _$AuthEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult Function(String email)? resetPasswordEvent,
-    TResult Function(String uid, File imageFile)? uploadProfileImageEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -57,8 +53,6 @@ mixin _$AuthEvent {
     required TResult Function(LoginEvent value) loginEvent,
     required TResult Function(RegisterEvent value) registerEvent,
     required TResult Function(ResetPasswordEvent value) resetPasswordEvent,
-    required TResult Function(UploadProfileImageEvent value)
-        uploadProfileImageEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,7 +61,6 @@ mixin _$AuthEvent {
     TResult? Function(LoginEvent value)? loginEvent,
     TResult? Function(RegisterEvent value)? registerEvent,
     TResult? Function(ResetPasswordEvent value)? resetPasswordEvent,
-    TResult? Function(UploadProfileImageEvent value)? uploadProfileImageEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,7 +69,6 @@ mixin _$AuthEvent {
     TResult Function(LoginEvent value)? loginEvent,
     TResult Function(RegisterEvent value)? registerEvent,
     TResult Function(ResetPasswordEvent value)? resetPasswordEvent,
-    TResult Function(UploadProfileImageEvent value)? uploadProfileImageEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -149,8 +141,6 @@ class _$StartedImpl implements _Started {
             String email, String password, String name, File? imageFile)
         registerEvent,
     required TResult Function(String email) resetPasswordEvent,
-    required TResult Function(String uid, File imageFile)
-        uploadProfileImageEvent,
   }) {
     return started();
   }
@@ -164,7 +154,6 @@ class _$StartedImpl implements _Started {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult? Function(String email)? resetPasswordEvent,
-    TResult? Function(String uid, File imageFile)? uploadProfileImageEvent,
   }) {
     return started?.call();
   }
@@ -178,7 +167,6 @@ class _$StartedImpl implements _Started {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult Function(String email)? resetPasswordEvent,
-    TResult Function(String uid, File imageFile)? uploadProfileImageEvent,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -194,8 +182,6 @@ class _$StartedImpl implements _Started {
     required TResult Function(LoginEvent value) loginEvent,
     required TResult Function(RegisterEvent value) registerEvent,
     required TResult Function(ResetPasswordEvent value) resetPasswordEvent,
-    required TResult Function(UploadProfileImageEvent value)
-        uploadProfileImageEvent,
   }) {
     return started(this);
   }
@@ -207,7 +193,6 @@ class _$StartedImpl implements _Started {
     TResult? Function(LoginEvent value)? loginEvent,
     TResult? Function(RegisterEvent value)? registerEvent,
     TResult? Function(ResetPasswordEvent value)? resetPasswordEvent,
-    TResult? Function(UploadProfileImageEvent value)? uploadProfileImageEvent,
   }) {
     return started?.call(this);
   }
@@ -219,7 +204,6 @@ class _$StartedImpl implements _Started {
     TResult Function(LoginEvent value)? loginEvent,
     TResult Function(RegisterEvent value)? registerEvent,
     TResult Function(ResetPasswordEvent value)? resetPasswordEvent,
-    TResult Function(UploadProfileImageEvent value)? uploadProfileImageEvent,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -316,8 +300,6 @@ class _$LoginEventImpl implements LoginEvent {
             String email, String password, String name, File? imageFile)
         registerEvent,
     required TResult Function(String email) resetPasswordEvent,
-    required TResult Function(String uid, File imageFile)
-        uploadProfileImageEvent,
   }) {
     return loginEvent(email, password);
   }
@@ -331,7 +313,6 @@ class _$LoginEventImpl implements LoginEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult? Function(String email)? resetPasswordEvent,
-    TResult? Function(String uid, File imageFile)? uploadProfileImageEvent,
   }) {
     return loginEvent?.call(email, password);
   }
@@ -345,7 +326,6 @@ class _$LoginEventImpl implements LoginEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult Function(String email)? resetPasswordEvent,
-    TResult Function(String uid, File imageFile)? uploadProfileImageEvent,
     required TResult orElse(),
   }) {
     if (loginEvent != null) {
@@ -361,8 +341,6 @@ class _$LoginEventImpl implements LoginEvent {
     required TResult Function(LoginEvent value) loginEvent,
     required TResult Function(RegisterEvent value) registerEvent,
     required TResult Function(ResetPasswordEvent value) resetPasswordEvent,
-    required TResult Function(UploadProfileImageEvent value)
-        uploadProfileImageEvent,
   }) {
     return loginEvent(this);
   }
@@ -374,7 +352,6 @@ class _$LoginEventImpl implements LoginEvent {
     TResult? Function(LoginEvent value)? loginEvent,
     TResult? Function(RegisterEvent value)? registerEvent,
     TResult? Function(ResetPasswordEvent value)? resetPasswordEvent,
-    TResult? Function(UploadProfileImageEvent value)? uploadProfileImageEvent,
   }) {
     return loginEvent?.call(this);
   }
@@ -386,7 +363,6 @@ class _$LoginEventImpl implements LoginEvent {
     TResult Function(LoginEvent value)? loginEvent,
     TResult Function(RegisterEvent value)? registerEvent,
     TResult Function(ResetPasswordEvent value)? resetPasswordEvent,
-    TResult Function(UploadProfileImageEvent value)? uploadProfileImageEvent,
     required TResult orElse(),
   }) {
     if (loginEvent != null) {
@@ -516,8 +492,6 @@ class _$RegisterEventImpl implements RegisterEvent {
             String email, String password, String name, File? imageFile)
         registerEvent,
     required TResult Function(String email) resetPasswordEvent,
-    required TResult Function(String uid, File imageFile)
-        uploadProfileImageEvent,
   }) {
     return registerEvent(email, password, name, imageFile);
   }
@@ -531,7 +505,6 @@ class _$RegisterEventImpl implements RegisterEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult? Function(String email)? resetPasswordEvent,
-    TResult? Function(String uid, File imageFile)? uploadProfileImageEvent,
   }) {
     return registerEvent?.call(email, password, name, imageFile);
   }
@@ -545,7 +518,6 @@ class _$RegisterEventImpl implements RegisterEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult Function(String email)? resetPasswordEvent,
-    TResult Function(String uid, File imageFile)? uploadProfileImageEvent,
     required TResult orElse(),
   }) {
     if (registerEvent != null) {
@@ -561,8 +533,6 @@ class _$RegisterEventImpl implements RegisterEvent {
     required TResult Function(LoginEvent value) loginEvent,
     required TResult Function(RegisterEvent value) registerEvent,
     required TResult Function(ResetPasswordEvent value) resetPasswordEvent,
-    required TResult Function(UploadProfileImageEvent value)
-        uploadProfileImageEvent,
   }) {
     return registerEvent(this);
   }
@@ -574,7 +544,6 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult? Function(LoginEvent value)? loginEvent,
     TResult? Function(RegisterEvent value)? registerEvent,
     TResult? Function(ResetPasswordEvent value)? resetPasswordEvent,
-    TResult? Function(UploadProfileImageEvent value)? uploadProfileImageEvent,
   }) {
     return registerEvent?.call(this);
   }
@@ -586,7 +555,6 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult Function(LoginEvent value)? loginEvent,
     TResult Function(RegisterEvent value)? registerEvent,
     TResult Function(ResetPasswordEvent value)? resetPasswordEvent,
-    TResult Function(UploadProfileImageEvent value)? uploadProfileImageEvent,
     required TResult orElse(),
   }) {
     if (registerEvent != null) {
@@ -690,8 +658,6 @@ class _$ResetPasswordEventImpl implements ResetPasswordEvent {
             String email, String password, String name, File? imageFile)
         registerEvent,
     required TResult Function(String email) resetPasswordEvent,
-    required TResult Function(String uid, File imageFile)
-        uploadProfileImageEvent,
   }) {
     return resetPasswordEvent(email);
   }
@@ -705,7 +671,6 @@ class _$ResetPasswordEventImpl implements ResetPasswordEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult? Function(String email)? resetPasswordEvent,
-    TResult? Function(String uid, File imageFile)? uploadProfileImageEvent,
   }) {
     return resetPasswordEvent?.call(email);
   }
@@ -719,7 +684,6 @@ class _$ResetPasswordEventImpl implements ResetPasswordEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult Function(String email)? resetPasswordEvent,
-    TResult Function(String uid, File imageFile)? uploadProfileImageEvent,
     required TResult orElse(),
   }) {
     if (resetPasswordEvent != null) {
@@ -735,8 +699,6 @@ class _$ResetPasswordEventImpl implements ResetPasswordEvent {
     required TResult Function(LoginEvent value) loginEvent,
     required TResult Function(RegisterEvent value) registerEvent,
     required TResult Function(ResetPasswordEvent value) resetPasswordEvent,
-    required TResult Function(UploadProfileImageEvent value)
-        uploadProfileImageEvent,
   }) {
     return resetPasswordEvent(this);
   }
@@ -748,7 +710,6 @@ class _$ResetPasswordEventImpl implements ResetPasswordEvent {
     TResult? Function(LoginEvent value)? loginEvent,
     TResult? Function(RegisterEvent value)? registerEvent,
     TResult? Function(ResetPasswordEvent value)? resetPasswordEvent,
-    TResult? Function(UploadProfileImageEvent value)? uploadProfileImageEvent,
   }) {
     return resetPasswordEvent?.call(this);
   }
@@ -760,7 +721,6 @@ class _$ResetPasswordEventImpl implements ResetPasswordEvent {
     TResult Function(LoginEvent value)? loginEvent,
     TResult Function(RegisterEvent value)? registerEvent,
     TResult Function(ResetPasswordEvent value)? resetPasswordEvent,
-    TResult Function(UploadProfileImageEvent value)? uploadProfileImageEvent,
     required TResult orElse(),
   }) {
     if (resetPasswordEvent != null) {
@@ -784,188 +744,6 @@ abstract class ResetPasswordEvent implements AuthEvent {
 }
 
 /// @nodoc
-abstract class _$$UploadProfileImageEventImplCopyWith<$Res> {
-  factory _$$UploadProfileImageEventImplCopyWith(
-          _$UploadProfileImageEventImpl value,
-          $Res Function(_$UploadProfileImageEventImpl) then) =
-      __$$UploadProfileImageEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String uid, File imageFile});
-}
-
-/// @nodoc
-class __$$UploadProfileImageEventImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$UploadProfileImageEventImpl>
-    implements _$$UploadProfileImageEventImplCopyWith<$Res> {
-  __$$UploadProfileImageEventImplCopyWithImpl(
-      _$UploadProfileImageEventImpl _value,
-      $Res Function(_$UploadProfileImageEventImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? uid = null,
-    Object? imageFile = null,
-  }) {
-    return _then(_$UploadProfileImageEventImpl(
-      uid: null == uid
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageFile: null == imageFile
-          ? _value.imageFile
-          : imageFile // ignore: cast_nullable_to_non_nullable
-              as File,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UploadProfileImageEventImpl implements UploadProfileImageEvent {
-  const _$UploadProfileImageEventImpl(
-      {required this.uid, required this.imageFile});
-
-  @override
-  final String uid;
-  @override
-  final File imageFile;
-
-  @override
-  String toString() {
-    return 'AuthEvent.uploadProfileImageEvent(uid: $uid, imageFile: $imageFile)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UploadProfileImageEventImpl &&
-            (identical(other.uid, uid) || other.uid == uid) &&
-            (identical(other.imageFile, imageFile) ||
-                other.imageFile == imageFile));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, uid, imageFile);
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UploadProfileImageEventImplCopyWith<_$UploadProfileImageEventImpl>
-      get copyWith => __$$UploadProfileImageEventImplCopyWithImpl<
-          _$UploadProfileImageEventImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String email, String password) loginEvent,
-    required TResult Function(
-            String email, String password, String name, File? imageFile)
-        registerEvent,
-    required TResult Function(String email) resetPasswordEvent,
-    required TResult Function(String uid, File imageFile)
-        uploadProfileImageEvent,
-  }) {
-    return uploadProfileImageEvent(uid, imageFile);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String email, String password)? loginEvent,
-    TResult? Function(
-            String email, String password, String name, File? imageFile)?
-        registerEvent,
-    TResult? Function(String email)? resetPasswordEvent,
-    TResult? Function(String uid, File imageFile)? uploadProfileImageEvent,
-  }) {
-    return uploadProfileImageEvent?.call(uid, imageFile);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String email, String password)? loginEvent,
-    TResult Function(
-            String email, String password, String name, File? imageFile)?
-        registerEvent,
-    TResult Function(String email)? resetPasswordEvent,
-    TResult Function(String uid, File imageFile)? uploadProfileImageEvent,
-    required TResult orElse(),
-  }) {
-    if (uploadProfileImageEvent != null) {
-      return uploadProfileImageEvent(uid, imageFile);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(LoginEvent value) loginEvent,
-    required TResult Function(RegisterEvent value) registerEvent,
-    required TResult Function(ResetPasswordEvent value) resetPasswordEvent,
-    required TResult Function(UploadProfileImageEvent value)
-        uploadProfileImageEvent,
-  }) {
-    return uploadProfileImageEvent(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(LoginEvent value)? loginEvent,
-    TResult? Function(RegisterEvent value)? registerEvent,
-    TResult? Function(ResetPasswordEvent value)? resetPasswordEvent,
-    TResult? Function(UploadProfileImageEvent value)? uploadProfileImageEvent,
-  }) {
-    return uploadProfileImageEvent?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(LoginEvent value)? loginEvent,
-    TResult Function(RegisterEvent value)? registerEvent,
-    TResult Function(ResetPasswordEvent value)? resetPasswordEvent,
-    TResult Function(UploadProfileImageEvent value)? uploadProfileImageEvent,
-    required TResult orElse(),
-  }) {
-    if (uploadProfileImageEvent != null) {
-      return uploadProfileImageEvent(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UploadProfileImageEvent implements AuthEvent {
-  const factory UploadProfileImageEvent(
-      {required final String uid,
-      required final File imageFile}) = _$UploadProfileImageEventImpl;
-
-  String get uid;
-  File get imageFile;
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UploadProfileImageEventImplCopyWith<_$UploadProfileImageEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 mixin _$AuthState {
   RequestStatus get loginStatus => throw _privateConstructorUsedError;
   UserModel? get userModelLogin => throw _privateConstructorUsedError;
@@ -973,9 +751,6 @@ mixin _$AuthState {
   RequestStatus get registerStatus => throw _privateConstructorUsedError;
   UserModel? get userModelRegister => throw _privateConstructorUsedError;
   Failures? get registerFailures => throw _privateConstructorUsedError;
-  RequestStatus get profileImageStatus => throw _privateConstructorUsedError;
-  Failures? get profileImageFailure => throw _privateConstructorUsedError;
-  UserModel? get updatedUser => throw _privateConstructorUsedError;
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -995,10 +770,7 @@ abstract class $AuthStateCopyWith<$Res> {
       Failures? loginFailures,
       RequestStatus registerStatus,
       UserModel? userModelRegister,
-      Failures? registerFailures,
-      RequestStatus profileImageStatus,
-      Failures? profileImageFailure,
-      UserModel? updatedUser});
+      Failures? registerFailures});
 }
 
 /// @nodoc
@@ -1022,9 +794,6 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? registerStatus = null,
     Object? userModelRegister = freezed,
     Object? registerFailures = freezed,
-    Object? profileImageStatus = null,
-    Object? profileImageFailure = freezed,
-    Object? updatedUser = freezed,
   }) {
     return _then(_value.copyWith(
       loginStatus: null == loginStatus
@@ -1051,18 +820,6 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.registerFailures
           : registerFailures // ignore: cast_nullable_to_non_nullable
               as Failures?,
-      profileImageStatus: null == profileImageStatus
-          ? _value.profileImageStatus
-          : profileImageStatus // ignore: cast_nullable_to_non_nullable
-              as RequestStatus,
-      profileImageFailure: freezed == profileImageFailure
-          ? _value.profileImageFailure
-          : profileImageFailure // ignore: cast_nullable_to_non_nullable
-              as Failures?,
-      updatedUser: freezed == updatedUser
-          ? _value.updatedUser
-          : updatedUser // ignore: cast_nullable_to_non_nullable
-              as UserModel?,
     ) as $Val);
   }
 }
@@ -1081,10 +838,7 @@ abstract class _$$AuthStateImplCopyWith<$Res>
       Failures? loginFailures,
       RequestStatus registerStatus,
       UserModel? userModelRegister,
-      Failures? registerFailures,
-      RequestStatus profileImageStatus,
-      Failures? profileImageFailure,
-      UserModel? updatedUser});
+      Failures? registerFailures});
 }
 
 /// @nodoc
@@ -1106,9 +860,6 @@ class __$$AuthStateImplCopyWithImpl<$Res>
     Object? registerStatus = null,
     Object? userModelRegister = freezed,
     Object? registerFailures = freezed,
-    Object? profileImageStatus = null,
-    Object? profileImageFailure = freezed,
-    Object? updatedUser = freezed,
   }) {
     return _then(_$AuthStateImpl(
       loginStatus: null == loginStatus
@@ -1135,18 +886,6 @@ class __$$AuthStateImplCopyWithImpl<$Res>
           ? _value.registerFailures
           : registerFailures // ignore: cast_nullable_to_non_nullable
               as Failures?,
-      profileImageStatus: null == profileImageStatus
-          ? _value.profileImageStatus
-          : profileImageStatus // ignore: cast_nullable_to_non_nullable
-              as RequestStatus,
-      profileImageFailure: freezed == profileImageFailure
-          ? _value.profileImageFailure
-          : profileImageFailure // ignore: cast_nullable_to_non_nullable
-              as Failures?,
-      updatedUser: freezed == updatedUser
-          ? _value.updatedUser
-          : updatedUser // ignore: cast_nullable_to_non_nullable
-              as UserModel?,
     ));
   }
 }
@@ -1160,10 +899,7 @@ class _$AuthStateImpl implements _AuthState {
       this.loginFailures,
       this.registerStatus = RequestStatus.init,
       this.userModelRegister,
-      this.registerFailures,
-      this.profileImageStatus = RequestStatus.init,
-      this.profileImageFailure,
-      this.updatedUser});
+      this.registerFailures});
 
   @override
   @JsonKey()
@@ -1179,17 +915,10 @@ class _$AuthStateImpl implements _AuthState {
   final UserModel? userModelRegister;
   @override
   final Failures? registerFailures;
-  @override
-  @JsonKey()
-  final RequestStatus profileImageStatus;
-  @override
-  final Failures? profileImageFailure;
-  @override
-  final UserModel? updatedUser;
 
   @override
   String toString() {
-    return 'AuthState(loginStatus: $loginStatus, userModelLogin: $userModelLogin, loginFailures: $loginFailures, registerStatus: $registerStatus, userModelRegister: $userModelRegister, registerFailures: $registerFailures, profileImageStatus: $profileImageStatus, profileImageFailure: $profileImageFailure, updatedUser: $updatedUser)';
+    return 'AuthState(loginStatus: $loginStatus, userModelLogin: $userModelLogin, loginFailures: $loginFailures, registerStatus: $registerStatus, userModelRegister: $userModelRegister, registerFailures: $registerFailures)';
   }
 
   @override
@@ -1208,27 +937,12 @@ class _$AuthStateImpl implements _AuthState {
             (identical(other.userModelRegister, userModelRegister) ||
                 other.userModelRegister == userModelRegister) &&
             (identical(other.registerFailures, registerFailures) ||
-                other.registerFailures == registerFailures) &&
-            (identical(other.profileImageStatus, profileImageStatus) ||
-                other.profileImageStatus == profileImageStatus) &&
-            (identical(other.profileImageFailure, profileImageFailure) ||
-                other.profileImageFailure == profileImageFailure) &&
-            (identical(other.updatedUser, updatedUser) ||
-                other.updatedUser == updatedUser));
+                other.registerFailures == registerFailures));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      loginStatus,
-      userModelLogin,
-      loginFailures,
-      registerStatus,
-      userModelRegister,
-      registerFailures,
-      profileImageStatus,
-      profileImageFailure,
-      updatedUser);
+  int get hashCode => Object.hash(runtimeType, loginStatus, userModelLogin,
+      loginFailures, registerStatus, userModelRegister, registerFailures);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -1246,10 +960,7 @@ abstract class _AuthState implements AuthState {
       final Failures? loginFailures,
       final RequestStatus registerStatus,
       final UserModel? userModelRegister,
-      final Failures? registerFailures,
-      final RequestStatus profileImageStatus,
-      final Failures? profileImageFailure,
-      final UserModel? updatedUser}) = _$AuthStateImpl;
+      final Failures? registerFailures}) = _$AuthStateImpl;
 
   @override
   RequestStatus get loginStatus;
@@ -1263,12 +974,6 @@ abstract class _AuthState implements AuthState {
   UserModel? get userModelRegister;
   @override
   Failures? get registerFailures;
-  @override
-  RequestStatus get profileImageStatus;
-  @override
-  Failures? get profileImageFailure;
-  @override
-  UserModel? get updatedUser;
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
