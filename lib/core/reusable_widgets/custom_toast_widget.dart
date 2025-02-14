@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:toastification/toastification.dart';
 
 myToast({
   required String text,
-  Color? bgColor,
-  Color? textColor,
+  bool isError = true,
   BuildContext? context,
 }) =>
     toastification.show(
@@ -13,13 +13,14 @@ myToast({
       description: Text(
         text,
         style: TextStyle(
-          fontSize: 14,
-          color: textColor ?? Colors.black,
+          fontSize: 12.sp,
+          color: Colors.white,
         ),
       ),
       autoCloseDuration: const Duration(seconds: 3),
       style: ToastificationStyle.flatColored,
-      backgroundColor: bgColor,
+      showIcon: false,
+      backgroundColor: isError ? Colors.red : Colors.green,
       primaryColor: Colors.white,
       closeButtonShowType: CloseButtonShowType.none,
       showProgressBar: false,

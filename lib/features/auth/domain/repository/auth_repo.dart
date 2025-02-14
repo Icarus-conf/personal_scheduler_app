@@ -13,4 +13,6 @@ abstract class AuthRepo {
     File? imageFile,
   );
   Future<Either<Failures, void>> resetPassword(String email);
+  Future<Either<Failures, UserModel?>> checkAutoLogin();
+  Future<Either<Failures, void>> logoutUser();
 }

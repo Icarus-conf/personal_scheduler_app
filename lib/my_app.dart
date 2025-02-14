@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:personal_scheduler_app/config/routes/routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_scheduler_app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:personal_scheduler_app/features/task/presentation/bloc/task_bloc.dart';
 import 'package:personal_scheduler_app/injectable.dart';
 import 'package:toastification/toastification.dart';
 
@@ -17,8 +18,11 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return BlocProvider(
-          create: (context) => getIt<AuthBloc>(),
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => getIt<AuthBloc>()),
+            BlocProvider(create: (context) => getIt<TaskBloc>()),
+          ],
           child: ToastificationWrapper(
             child: MaterialApp.router(
               debugShowCheckedModeBanner: false,

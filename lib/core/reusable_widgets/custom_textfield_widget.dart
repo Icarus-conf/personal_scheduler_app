@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_scheduler_app/core/utils/app_colors.dart';
+import 'package:personal_scheduler_app/core/utils/custom_text_styles.dart';
 
 class CustomTextField extends StatelessWidget {
   final String label;
   final String hintText;
   final TextEditingController controller;
   final bool obscureText;
+  final Widget? suffixIcon;
+  final Color? bgColor;
+  final TextInputType? keyboardType;
+  final String? Function(String?)? validator;
 
   const CustomTextField({
     super.key,
@@ -14,6 +19,10 @@ class CustomTextField extends StatelessWidget {
     required this.hintText,
     required this.controller,
     this.obscureText = false,
+    this.suffixIcon,
+    this.bgColor,
+    this.keyboardType,
+    this.validator,
   });
 
   @override
@@ -21,15 +30,23 @@ class CustomTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: TextStyle(fontSize: 16.sp)),
+        Text(
+          label,
+          style: CustomTextStyles.textStyle16.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
+        ),
         SizedBox(height: 5.h),
-        TextField(
+        TextFormField(
+          validator: validator,
+          keyboardType: keyboardType,
           controller: controller,
           obscureText: obscureText,
           decoration: InputDecoration(
+            suffixIcon: suffixIcon,
             hintText: hintText,
             filled: true,
-            fillColor: AppColors.textFieldFillColor,
+            fillColor: bgColor ?? AppColors.textFieldFillColor,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.r),
               borderSide: BorderSide.none,

@@ -13,4 +13,6 @@ class AuthEvent with _$AuthEvent {
   }) = RegisterEvent;
   const factory AuthEvent.resetPasswordEvent({required String email}) =
       ResetPasswordEvent;
+  const factory AuthEvent.checkAutoLogin() = CheckAutoLogin;
+  const factory AuthEvent.logoutUser() = LogoutUser;
 }

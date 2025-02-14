@@ -25,7 +25,6 @@ class WavePainter1 extends CustomPainter {
   bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
 
-// Second wave (Darker Front Layer)
 class WavePainter2 extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {

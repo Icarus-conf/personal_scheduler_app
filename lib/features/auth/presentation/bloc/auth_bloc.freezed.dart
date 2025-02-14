@@ -24,6 +24,8 @@ mixin _$AuthEvent {
             String email, String password, String name, File? imageFile)
         registerEvent,
     required TResult Function(String email) resetPasswordEvent,
+    required TResult Function() checkAutoLogin,
+    required TResult Function() logoutUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +36,8 @@ mixin _$AuthEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult? Function(String email)? resetPasswordEvent,
+    TResult? Function()? checkAutoLogin,
+    TResult? Function()? logoutUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +48,8 @@ mixin _$AuthEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult Function(String email)? resetPasswordEvent,
+    TResult Function()? checkAutoLogin,
+    TResult Function()? logoutUser,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +59,8 @@ mixin _$AuthEvent {
     required TResult Function(LoginEvent value) loginEvent,
     required TResult Function(RegisterEvent value) registerEvent,
     required TResult Function(ResetPasswordEvent value) resetPasswordEvent,
+    required TResult Function(CheckAutoLogin value) checkAutoLogin,
+    required TResult Function(LogoutUser value) logoutUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +69,8 @@ mixin _$AuthEvent {
     TResult? Function(LoginEvent value)? loginEvent,
     TResult? Function(RegisterEvent value)? registerEvent,
     TResult? Function(ResetPasswordEvent value)? resetPasswordEvent,
+    TResult? Function(CheckAutoLogin value)? checkAutoLogin,
+    TResult? Function(LogoutUser value)? logoutUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +79,8 @@ mixin _$AuthEvent {
     TResult Function(LoginEvent value)? loginEvent,
     TResult Function(RegisterEvent value)? registerEvent,
     TResult Function(ResetPasswordEvent value)? resetPasswordEvent,
+    TResult Function(CheckAutoLogin value)? checkAutoLogin,
+    TResult Function(LogoutUser value)? logoutUser,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -141,6 +153,8 @@ class _$StartedImpl implements _Started {
             String email, String password, String name, File? imageFile)
         registerEvent,
     required TResult Function(String email) resetPasswordEvent,
+    required TResult Function() checkAutoLogin,
+    required TResult Function() logoutUser,
   }) {
     return started();
   }
@@ -154,6 +168,8 @@ class _$StartedImpl implements _Started {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult? Function(String email)? resetPasswordEvent,
+    TResult? Function()? checkAutoLogin,
+    TResult? Function()? logoutUser,
   }) {
     return started?.call();
   }
@@ -167,6 +183,8 @@ class _$StartedImpl implements _Started {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult Function(String email)? resetPasswordEvent,
+    TResult Function()? checkAutoLogin,
+    TResult Function()? logoutUser,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -182,6 +200,8 @@ class _$StartedImpl implements _Started {
     required TResult Function(LoginEvent value) loginEvent,
     required TResult Function(RegisterEvent value) registerEvent,
     required TResult Function(ResetPasswordEvent value) resetPasswordEvent,
+    required TResult Function(CheckAutoLogin value) checkAutoLogin,
+    required TResult Function(LogoutUser value) logoutUser,
   }) {
     return started(this);
   }
@@ -193,6 +213,8 @@ class _$StartedImpl implements _Started {
     TResult? Function(LoginEvent value)? loginEvent,
     TResult? Function(RegisterEvent value)? registerEvent,
     TResult? Function(ResetPasswordEvent value)? resetPasswordEvent,
+    TResult? Function(CheckAutoLogin value)? checkAutoLogin,
+    TResult? Function(LogoutUser value)? logoutUser,
   }) {
     return started?.call(this);
   }
@@ -204,6 +226,8 @@ class _$StartedImpl implements _Started {
     TResult Function(LoginEvent value)? loginEvent,
     TResult Function(RegisterEvent value)? registerEvent,
     TResult Function(ResetPasswordEvent value)? resetPasswordEvent,
+    TResult Function(CheckAutoLogin value)? checkAutoLogin,
+    TResult Function(LogoutUser value)? logoutUser,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -300,6 +324,8 @@ class _$LoginEventImpl implements LoginEvent {
             String email, String password, String name, File? imageFile)
         registerEvent,
     required TResult Function(String email) resetPasswordEvent,
+    required TResult Function() checkAutoLogin,
+    required TResult Function() logoutUser,
   }) {
     return loginEvent(email, password);
   }
@@ -313,6 +339,8 @@ class _$LoginEventImpl implements LoginEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult? Function(String email)? resetPasswordEvent,
+    TResult? Function()? checkAutoLogin,
+    TResult? Function()? logoutUser,
   }) {
     return loginEvent?.call(email, password);
   }
@@ -326,6 +354,8 @@ class _$LoginEventImpl implements LoginEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult Function(String email)? resetPasswordEvent,
+    TResult Function()? checkAutoLogin,
+    TResult Function()? logoutUser,
     required TResult orElse(),
   }) {
     if (loginEvent != null) {
@@ -341,6 +371,8 @@ class _$LoginEventImpl implements LoginEvent {
     required TResult Function(LoginEvent value) loginEvent,
     required TResult Function(RegisterEvent value) registerEvent,
     required TResult Function(ResetPasswordEvent value) resetPasswordEvent,
+    required TResult Function(CheckAutoLogin value) checkAutoLogin,
+    required TResult Function(LogoutUser value) logoutUser,
   }) {
     return loginEvent(this);
   }
@@ -352,6 +384,8 @@ class _$LoginEventImpl implements LoginEvent {
     TResult? Function(LoginEvent value)? loginEvent,
     TResult? Function(RegisterEvent value)? registerEvent,
     TResult? Function(ResetPasswordEvent value)? resetPasswordEvent,
+    TResult? Function(CheckAutoLogin value)? checkAutoLogin,
+    TResult? Function(LogoutUser value)? logoutUser,
   }) {
     return loginEvent?.call(this);
   }
@@ -363,6 +397,8 @@ class _$LoginEventImpl implements LoginEvent {
     TResult Function(LoginEvent value)? loginEvent,
     TResult Function(RegisterEvent value)? registerEvent,
     TResult Function(ResetPasswordEvent value)? resetPasswordEvent,
+    TResult Function(CheckAutoLogin value)? checkAutoLogin,
+    TResult Function(LogoutUser value)? logoutUser,
     required TResult orElse(),
   }) {
     if (loginEvent != null) {
@@ -492,6 +528,8 @@ class _$RegisterEventImpl implements RegisterEvent {
             String email, String password, String name, File? imageFile)
         registerEvent,
     required TResult Function(String email) resetPasswordEvent,
+    required TResult Function() checkAutoLogin,
+    required TResult Function() logoutUser,
   }) {
     return registerEvent(email, password, name, imageFile);
   }
@@ -505,6 +543,8 @@ class _$RegisterEventImpl implements RegisterEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult? Function(String email)? resetPasswordEvent,
+    TResult? Function()? checkAutoLogin,
+    TResult? Function()? logoutUser,
   }) {
     return registerEvent?.call(email, password, name, imageFile);
   }
@@ -518,6 +558,8 @@ class _$RegisterEventImpl implements RegisterEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult Function(String email)? resetPasswordEvent,
+    TResult Function()? checkAutoLogin,
+    TResult Function()? logoutUser,
     required TResult orElse(),
   }) {
     if (registerEvent != null) {
@@ -533,6 +575,8 @@ class _$RegisterEventImpl implements RegisterEvent {
     required TResult Function(LoginEvent value) loginEvent,
     required TResult Function(RegisterEvent value) registerEvent,
     required TResult Function(ResetPasswordEvent value) resetPasswordEvent,
+    required TResult Function(CheckAutoLogin value) checkAutoLogin,
+    required TResult Function(LogoutUser value) logoutUser,
   }) {
     return registerEvent(this);
   }
@@ -544,6 +588,8 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult? Function(LoginEvent value)? loginEvent,
     TResult? Function(RegisterEvent value)? registerEvent,
     TResult? Function(ResetPasswordEvent value)? resetPasswordEvent,
+    TResult? Function(CheckAutoLogin value)? checkAutoLogin,
+    TResult? Function(LogoutUser value)? logoutUser,
   }) {
     return registerEvent?.call(this);
   }
@@ -555,6 +601,8 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult Function(LoginEvent value)? loginEvent,
     TResult Function(RegisterEvent value)? registerEvent,
     TResult Function(ResetPasswordEvent value)? resetPasswordEvent,
+    TResult Function(CheckAutoLogin value)? checkAutoLogin,
+    TResult Function(LogoutUser value)? logoutUser,
     required TResult orElse(),
   }) {
     if (registerEvent != null) {
@@ -658,6 +706,8 @@ class _$ResetPasswordEventImpl implements ResetPasswordEvent {
             String email, String password, String name, File? imageFile)
         registerEvent,
     required TResult Function(String email) resetPasswordEvent,
+    required TResult Function() checkAutoLogin,
+    required TResult Function() logoutUser,
   }) {
     return resetPasswordEvent(email);
   }
@@ -671,6 +721,8 @@ class _$ResetPasswordEventImpl implements ResetPasswordEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult? Function(String email)? resetPasswordEvent,
+    TResult? Function()? checkAutoLogin,
+    TResult? Function()? logoutUser,
   }) {
     return resetPasswordEvent?.call(email);
   }
@@ -684,6 +736,8 @@ class _$ResetPasswordEventImpl implements ResetPasswordEvent {
             String email, String password, String name, File? imageFile)?
         registerEvent,
     TResult Function(String email)? resetPasswordEvent,
+    TResult Function()? checkAutoLogin,
+    TResult Function()? logoutUser,
     required TResult orElse(),
   }) {
     if (resetPasswordEvent != null) {
@@ -699,6 +753,8 @@ class _$ResetPasswordEventImpl implements ResetPasswordEvent {
     required TResult Function(LoginEvent value) loginEvent,
     required TResult Function(RegisterEvent value) registerEvent,
     required TResult Function(ResetPasswordEvent value) resetPasswordEvent,
+    required TResult Function(CheckAutoLogin value) checkAutoLogin,
+    required TResult Function(LogoutUser value) logoutUser,
   }) {
     return resetPasswordEvent(this);
   }
@@ -710,6 +766,8 @@ class _$ResetPasswordEventImpl implements ResetPasswordEvent {
     TResult? Function(LoginEvent value)? loginEvent,
     TResult? Function(RegisterEvent value)? registerEvent,
     TResult? Function(ResetPasswordEvent value)? resetPasswordEvent,
+    TResult? Function(CheckAutoLogin value)? checkAutoLogin,
+    TResult? Function(LogoutUser value)? logoutUser,
   }) {
     return resetPasswordEvent?.call(this);
   }
@@ -721,6 +779,8 @@ class _$ResetPasswordEventImpl implements ResetPasswordEvent {
     TResult Function(LoginEvent value)? loginEvent,
     TResult Function(RegisterEvent value)? registerEvent,
     TResult Function(ResetPasswordEvent value)? resetPasswordEvent,
+    TResult Function(CheckAutoLogin value)? checkAutoLogin,
+    TResult Function(LogoutUser value)? logoutUser,
     required TResult orElse(),
   }) {
     if (resetPasswordEvent != null) {
@@ -744,6 +804,276 @@ abstract class ResetPasswordEvent implements AuthEvent {
 }
 
 /// @nodoc
+abstract class _$$CheckAutoLoginImplCopyWith<$Res> {
+  factory _$$CheckAutoLoginImplCopyWith(_$CheckAutoLoginImpl value,
+          $Res Function(_$CheckAutoLoginImpl) then) =
+      __$$CheckAutoLoginImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CheckAutoLoginImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$CheckAutoLoginImpl>
+    implements _$$CheckAutoLoginImplCopyWith<$Res> {
+  __$$CheckAutoLoginImplCopyWithImpl(
+      _$CheckAutoLoginImpl _value, $Res Function(_$CheckAutoLoginImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CheckAutoLoginImpl implements CheckAutoLogin {
+  const _$CheckAutoLoginImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.checkAutoLogin()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CheckAutoLoginImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String email, String password) loginEvent,
+    required TResult Function(
+            String email, String password, String name, File? imageFile)
+        registerEvent,
+    required TResult Function(String email) resetPasswordEvent,
+    required TResult Function() checkAutoLogin,
+    required TResult Function() logoutUser,
+  }) {
+    return checkAutoLogin();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String email, String password)? loginEvent,
+    TResult? Function(
+            String email, String password, String name, File? imageFile)?
+        registerEvent,
+    TResult? Function(String email)? resetPasswordEvent,
+    TResult? Function()? checkAutoLogin,
+    TResult? Function()? logoutUser,
+  }) {
+    return checkAutoLogin?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String email, String password)? loginEvent,
+    TResult Function(
+            String email, String password, String name, File? imageFile)?
+        registerEvent,
+    TResult Function(String email)? resetPasswordEvent,
+    TResult Function()? checkAutoLogin,
+    TResult Function()? logoutUser,
+    required TResult orElse(),
+  }) {
+    if (checkAutoLogin != null) {
+      return checkAutoLogin();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(LoginEvent value) loginEvent,
+    required TResult Function(RegisterEvent value) registerEvent,
+    required TResult Function(ResetPasswordEvent value) resetPasswordEvent,
+    required TResult Function(CheckAutoLogin value) checkAutoLogin,
+    required TResult Function(LogoutUser value) logoutUser,
+  }) {
+    return checkAutoLogin(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(LoginEvent value)? loginEvent,
+    TResult? Function(RegisterEvent value)? registerEvent,
+    TResult? Function(ResetPasswordEvent value)? resetPasswordEvent,
+    TResult? Function(CheckAutoLogin value)? checkAutoLogin,
+    TResult? Function(LogoutUser value)? logoutUser,
+  }) {
+    return checkAutoLogin?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(LoginEvent value)? loginEvent,
+    TResult Function(RegisterEvent value)? registerEvent,
+    TResult Function(ResetPasswordEvent value)? resetPasswordEvent,
+    TResult Function(CheckAutoLogin value)? checkAutoLogin,
+    TResult Function(LogoutUser value)? logoutUser,
+    required TResult orElse(),
+  }) {
+    if (checkAutoLogin != null) {
+      return checkAutoLogin(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckAutoLogin implements AuthEvent {
+  const factory CheckAutoLogin() = _$CheckAutoLoginImpl;
+}
+
+/// @nodoc
+abstract class _$$LogoutUserImplCopyWith<$Res> {
+  factory _$$LogoutUserImplCopyWith(
+          _$LogoutUserImpl value, $Res Function(_$LogoutUserImpl) then) =
+      __$$LogoutUserImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LogoutUserImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$LogoutUserImpl>
+    implements _$$LogoutUserImplCopyWith<$Res> {
+  __$$LogoutUserImplCopyWithImpl(
+      _$LogoutUserImpl _value, $Res Function(_$LogoutUserImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LogoutUserImpl implements LogoutUser {
+  const _$LogoutUserImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.logoutUser()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LogoutUserImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String email, String password) loginEvent,
+    required TResult Function(
+            String email, String password, String name, File? imageFile)
+        registerEvent,
+    required TResult Function(String email) resetPasswordEvent,
+    required TResult Function() checkAutoLogin,
+    required TResult Function() logoutUser,
+  }) {
+    return logoutUser();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String email, String password)? loginEvent,
+    TResult? Function(
+            String email, String password, String name, File? imageFile)?
+        registerEvent,
+    TResult? Function(String email)? resetPasswordEvent,
+    TResult? Function()? checkAutoLogin,
+    TResult? Function()? logoutUser,
+  }) {
+    return logoutUser?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String email, String password)? loginEvent,
+    TResult Function(
+            String email, String password, String name, File? imageFile)?
+        registerEvent,
+    TResult Function(String email)? resetPasswordEvent,
+    TResult Function()? checkAutoLogin,
+    TResult Function()? logoutUser,
+    required TResult orElse(),
+  }) {
+    if (logoutUser != null) {
+      return logoutUser();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(LoginEvent value) loginEvent,
+    required TResult Function(RegisterEvent value) registerEvent,
+    required TResult Function(ResetPasswordEvent value) resetPasswordEvent,
+    required TResult Function(CheckAutoLogin value) checkAutoLogin,
+    required TResult Function(LogoutUser value) logoutUser,
+  }) {
+    return logoutUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(LoginEvent value)? loginEvent,
+    TResult? Function(RegisterEvent value)? registerEvent,
+    TResult? Function(ResetPasswordEvent value)? resetPasswordEvent,
+    TResult? Function(CheckAutoLogin value)? checkAutoLogin,
+    TResult? Function(LogoutUser value)? logoutUser,
+  }) {
+    return logoutUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(LoginEvent value)? loginEvent,
+    TResult Function(RegisterEvent value)? registerEvent,
+    TResult Function(ResetPasswordEvent value)? resetPasswordEvent,
+    TResult Function(CheckAutoLogin value)? checkAutoLogin,
+    TResult Function(LogoutUser value)? logoutUser,
+    required TResult orElse(),
+  }) {
+    if (logoutUser != null) {
+      return logoutUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutUser implements AuthEvent {
+  const factory LogoutUser() = _$LogoutUserImpl;
+}
+
+/// @nodoc
 mixin _$AuthState {
   RequestStatus get loginStatus => throw _privateConstructorUsedError;
   UserModel? get userModelLogin => throw _privateConstructorUsedError;
@@ -751,6 +1081,12 @@ mixin _$AuthState {
   RequestStatus get registerStatus => throw _privateConstructorUsedError;
   UserModel? get userModelRegister => throw _privateConstructorUsedError;
   Failures? get registerFailures => throw _privateConstructorUsedError;
+  RequestStatus get checkAutoLoginStatus => throw _privateConstructorUsedError;
+  Failures? get checkAutoLoginFailures => throw _privateConstructorUsedError;
+  RequestStatus get logOutStatus => throw _privateConstructorUsedError;
+  Failures? get logOutFailures => throw _privateConstructorUsedError;
+  RequestStatus get resetPassStatus => throw _privateConstructorUsedError;
+  Failures? get resetPassFailures => throw _privateConstructorUsedError;
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -770,7 +1106,13 @@ abstract class $AuthStateCopyWith<$Res> {
       Failures? loginFailures,
       RequestStatus registerStatus,
       UserModel? userModelRegister,
-      Failures? registerFailures});
+      Failures? registerFailures,
+      RequestStatus checkAutoLoginStatus,
+      Failures? checkAutoLoginFailures,
+      RequestStatus logOutStatus,
+      Failures? logOutFailures,
+      RequestStatus resetPassStatus,
+      Failures? resetPassFailures});
 }
 
 /// @nodoc
@@ -794,6 +1136,12 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? registerStatus = null,
     Object? userModelRegister = freezed,
     Object? registerFailures = freezed,
+    Object? checkAutoLoginStatus = null,
+    Object? checkAutoLoginFailures = freezed,
+    Object? logOutStatus = null,
+    Object? logOutFailures = freezed,
+    Object? resetPassStatus = null,
+    Object? resetPassFailures = freezed,
   }) {
     return _then(_value.copyWith(
       loginStatus: null == loginStatus
@@ -820,6 +1168,30 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.registerFailures
           : registerFailures // ignore: cast_nullable_to_non_nullable
               as Failures?,
+      checkAutoLoginStatus: null == checkAutoLoginStatus
+          ? _value.checkAutoLoginStatus
+          : checkAutoLoginStatus // ignore: cast_nullable_to_non_nullable
+              as RequestStatus,
+      checkAutoLoginFailures: freezed == checkAutoLoginFailures
+          ? _value.checkAutoLoginFailures
+          : checkAutoLoginFailures // ignore: cast_nullable_to_non_nullable
+              as Failures?,
+      logOutStatus: null == logOutStatus
+          ? _value.logOutStatus
+          : logOutStatus // ignore: cast_nullable_to_non_nullable
+              as RequestStatus,
+      logOutFailures: freezed == logOutFailures
+          ? _value.logOutFailures
+          : logOutFailures // ignore: cast_nullable_to_non_nullable
+              as Failures?,
+      resetPassStatus: null == resetPassStatus
+          ? _value.resetPassStatus
+          : resetPassStatus // ignore: cast_nullable_to_non_nullable
+              as RequestStatus,
+      resetPassFailures: freezed == resetPassFailures
+          ? _value.resetPassFailures
+          : resetPassFailures // ignore: cast_nullable_to_non_nullable
+              as Failures?,
     ) as $Val);
   }
 }
@@ -838,7 +1210,13 @@ abstract class _$$AuthStateImplCopyWith<$Res>
       Failures? loginFailures,
       RequestStatus registerStatus,
       UserModel? userModelRegister,
-      Failures? registerFailures});
+      Failures? registerFailures,
+      RequestStatus checkAutoLoginStatus,
+      Failures? checkAutoLoginFailures,
+      RequestStatus logOutStatus,
+      Failures? logOutFailures,
+      RequestStatus resetPassStatus,
+      Failures? resetPassFailures});
 }
 
 /// @nodoc
@@ -860,6 +1238,12 @@ class __$$AuthStateImplCopyWithImpl<$Res>
     Object? registerStatus = null,
     Object? userModelRegister = freezed,
     Object? registerFailures = freezed,
+    Object? checkAutoLoginStatus = null,
+    Object? checkAutoLoginFailures = freezed,
+    Object? logOutStatus = null,
+    Object? logOutFailures = freezed,
+    Object? resetPassStatus = null,
+    Object? resetPassFailures = freezed,
   }) {
     return _then(_$AuthStateImpl(
       loginStatus: null == loginStatus
@@ -886,6 +1270,30 @@ class __$$AuthStateImplCopyWithImpl<$Res>
           ? _value.registerFailures
           : registerFailures // ignore: cast_nullable_to_non_nullable
               as Failures?,
+      checkAutoLoginStatus: null == checkAutoLoginStatus
+          ? _value.checkAutoLoginStatus
+          : checkAutoLoginStatus // ignore: cast_nullable_to_non_nullable
+              as RequestStatus,
+      checkAutoLoginFailures: freezed == checkAutoLoginFailures
+          ? _value.checkAutoLoginFailures
+          : checkAutoLoginFailures // ignore: cast_nullable_to_non_nullable
+              as Failures?,
+      logOutStatus: null == logOutStatus
+          ? _value.logOutStatus
+          : logOutStatus // ignore: cast_nullable_to_non_nullable
+              as RequestStatus,
+      logOutFailures: freezed == logOutFailures
+          ? _value.logOutFailures
+          : logOutFailures // ignore: cast_nullable_to_non_nullable
+              as Failures?,
+      resetPassStatus: null == resetPassStatus
+          ? _value.resetPassStatus
+          : resetPassStatus // ignore: cast_nullable_to_non_nullable
+              as RequestStatus,
+      resetPassFailures: freezed == resetPassFailures
+          ? _value.resetPassFailures
+          : resetPassFailures // ignore: cast_nullable_to_non_nullable
+              as Failures?,
     ));
   }
 }
@@ -899,7 +1307,13 @@ class _$AuthStateImpl implements _AuthState {
       this.loginFailures,
       this.registerStatus = RequestStatus.init,
       this.userModelRegister,
-      this.registerFailures});
+      this.registerFailures,
+      this.checkAutoLoginStatus = RequestStatus.init,
+      this.checkAutoLoginFailures,
+      this.logOutStatus = RequestStatus.init,
+      this.logOutFailures,
+      this.resetPassStatus = RequestStatus.init,
+      this.resetPassFailures});
 
   @override
   @JsonKey()
@@ -915,10 +1329,25 @@ class _$AuthStateImpl implements _AuthState {
   final UserModel? userModelRegister;
   @override
   final Failures? registerFailures;
+  @override
+  @JsonKey()
+  final RequestStatus checkAutoLoginStatus;
+  @override
+  final Failures? checkAutoLoginFailures;
+  @override
+  @JsonKey()
+  final RequestStatus logOutStatus;
+  @override
+  final Failures? logOutFailures;
+  @override
+  @JsonKey()
+  final RequestStatus resetPassStatus;
+  @override
+  final Failures? resetPassFailures;
 
   @override
   String toString() {
-    return 'AuthState(loginStatus: $loginStatus, userModelLogin: $userModelLogin, loginFailures: $loginFailures, registerStatus: $registerStatus, userModelRegister: $userModelRegister, registerFailures: $registerFailures)';
+    return 'AuthState(loginStatus: $loginStatus, userModelLogin: $userModelLogin, loginFailures: $loginFailures, registerStatus: $registerStatus, userModelRegister: $userModelRegister, registerFailures: $registerFailures, checkAutoLoginStatus: $checkAutoLoginStatus, checkAutoLoginFailures: $checkAutoLoginFailures, logOutStatus: $logOutStatus, logOutFailures: $logOutFailures, resetPassStatus: $resetPassStatus, resetPassFailures: $resetPassFailures)';
   }
 
   @override
@@ -937,12 +1366,36 @@ class _$AuthStateImpl implements _AuthState {
             (identical(other.userModelRegister, userModelRegister) ||
                 other.userModelRegister == userModelRegister) &&
             (identical(other.registerFailures, registerFailures) ||
-                other.registerFailures == registerFailures));
+                other.registerFailures == registerFailures) &&
+            (identical(other.checkAutoLoginStatus, checkAutoLoginStatus) ||
+                other.checkAutoLoginStatus == checkAutoLoginStatus) &&
+            (identical(other.checkAutoLoginFailures, checkAutoLoginFailures) ||
+                other.checkAutoLoginFailures == checkAutoLoginFailures) &&
+            (identical(other.logOutStatus, logOutStatus) ||
+                other.logOutStatus == logOutStatus) &&
+            (identical(other.logOutFailures, logOutFailures) ||
+                other.logOutFailures == logOutFailures) &&
+            (identical(other.resetPassStatus, resetPassStatus) ||
+                other.resetPassStatus == resetPassStatus) &&
+            (identical(other.resetPassFailures, resetPassFailures) ||
+                other.resetPassFailures == resetPassFailures));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, loginStatus, userModelLogin,
-      loginFailures, registerStatus, userModelRegister, registerFailures);
+  int get hashCode => Object.hash(
+      runtimeType,
+      loginStatus,
+      userModelLogin,
+      loginFailures,
+      registerStatus,
+      userModelRegister,
+      registerFailures,
+      checkAutoLoginStatus,
+      checkAutoLoginFailures,
+      logOutStatus,
+      logOutFailures,
+      resetPassStatus,
+      resetPassFailures);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -960,7 +1413,13 @@ abstract class _AuthState implements AuthState {
       final Failures? loginFailures,
       final RequestStatus registerStatus,
       final UserModel? userModelRegister,
-      final Failures? registerFailures}) = _$AuthStateImpl;
+      final Failures? registerFailures,
+      final RequestStatus checkAutoLoginStatus,
+      final Failures? checkAutoLoginFailures,
+      final RequestStatus logOutStatus,
+      final Failures? logOutFailures,
+      final RequestStatus resetPassStatus,
+      final Failures? resetPassFailures}) = _$AuthStateImpl;
 
   @override
   RequestStatus get loginStatus;
@@ -974,6 +1433,18 @@ abstract class _AuthState implements AuthState {
   UserModel? get userModelRegister;
   @override
   Failures? get registerFailures;
+  @override
+  RequestStatus get checkAutoLoginStatus;
+  @override
+  Failures? get checkAutoLoginFailures;
+  @override
+  RequestStatus get logOutStatus;
+  @override
+  Failures? get logOutFailures;
+  @override
+  RequestStatus get resetPassStatus;
+  @override
+  Failures? get resetPassFailures;
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
