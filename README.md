@@ -9,7 +9,7 @@ Personal Scheduler App is a Flutter-based application designed to help users man
 - **Task Management**: Create, edit, and delete tasks.
 - **Schedule Management**: Organize tasks by date and time.
 - **Notifications**: Receive reminders for upcoming tasks.
-- **Cross-Platform Support**: Available on Android, iOS.
+- **Cross-Platform Support**: Available on Android, iOS, Windows, macOS, and Linux.
 
 ## Installation
 
@@ -17,11 +17,34 @@ Personal Scheduler App is a Flutter-based application designed to help users man
 
 - Flutter SDK: [Install Flutter](https://flutter.dev/docs/get-started/install)
 - Dart SDK: Included with Flutter
+- Android Studio or Xcode: For Android and iOS development
 
 ### Steps
 
 1. Clone the repository:
 
-```sh
-git clone https://github.com/yourusername/personal_scheduler_app.git
-cd personal_scheduler_app
+    ```sh
+    git clone https://github.com/yourusername/personal_scheduler_app.git
+    cd personal_scheduler_app
+    ```
+
+2. Install dependencies:
+
+    ```sh
+    flutter pub get
+    ```
+
+3. Run the app:
+
+    For Android:
+    ```sh
+    flutter run
+    ```
+
+    For iOS:
+    ```sh
+    flutter run
+    ```
+
+
+
