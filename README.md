@@ -1,6 +1,6 @@
 # Personal Scheduler App
 
-![App Icon](assets/icons/app-icon.svg)
+<img src="assets/icons/app-icon.svg" alt="App Icon" width="100" height="100">
 
 Personal Scheduler App is a Flutter-based application designed to help users manage their tasks and schedules efficiently. The app provides a user-friendly interface for creating, editing, and organizing tasks, ensuring that users can stay on top of their daily activities.
 
