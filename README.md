@@ -48,9 +48,10 @@ Personal Scheduler App is a Flutter-based application designed to help users man
 
 
 
-  <img src="assets/app_images/1.png" width="350">
-<img src="assets/app_images/2.png" width="200" height="400">
-  <img src="assets/app_images/3.png"width="200" height="400">
-  <img src="assets/app_images/4.png" width="200" height="400">
-  <img src="assets/app_images/5.png"width="200" height="400">
-
+<p align="center">
+  <img src="assets/app_images/1.png" width="200" height="400" style="display: inline-block;">
+  <img src="assets/app_images/2.png" width="200" height="400" style="display: inline-block;">
+  <img src="assets/app_images/3.png" width="200" height="400" style="display: inline-block;">
+  <img src="assets/app_images/4.png" width="200" height="400" style="display: inline-block;">
+  <img src="assets/app_images/5.png" width="200" height="400" style="display: inline-block;">
+</p>
