@@ -26,74 +26,84 @@ final GoRouter router = GoRouter(
     GoRoute(
       name: RoutesNames.authView,
       path: RoutesNames.authView,
-      builder: (BuildContext context, GoRouterState state) {
-        return AuthView();
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return _buildPageWithFadeTransition(const AuthView());
       },
     ),
     GoRoute(
       name: RoutesNames.loginView,
       path: RoutesNames.loginView,
-      builder: (BuildContext context, GoRouterState state) {
-        return LoginView();
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return _buildPageWithFadeTransition(const LoginView());
       },
     ),
     GoRoute(
       name: RoutesNames.forgetView,
       path: RoutesNames.forgetView,
-      builder: (BuildContext context, GoRouterState state) {
-        return ForgetPasswordView();
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return _buildPageWithFadeTransition(const ForgetPasswordView());
       },
     ),
     GoRoute(
       name: RoutesNames.registerView,
       path: RoutesNames.registerView,
-      builder: (BuildContext context, GoRouterState state) {
-        return RegisterView();
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return _buildPageWithFadeTransition(const RegisterView());
       },
     ),
     GoRoute(
       name: RoutesNames.taskView,
       path: RoutesNames.taskView,
-      builder: (BuildContext context, GoRouterState state) {
-        return TaskView();
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return _buildPageWithFadeTransition(const TaskView());
       },
     ),
     GoRoute(
       name: RoutesNames.addTaskView,
       path: RoutesNames.addTaskView,
-      builder: (BuildContext context, GoRouterState state) {
+      pageBuilder: (BuildContext context, GoRouterState state) {
         final String userID = state.extra as String;
-        return AddTaskView(
-          userId: userID,
-        );
+        return _buildPageWithFadeTransition(AddTaskView(userId: userID));
       },
     ),
     GoRoute(
       name: RoutesNames.editTaskView,
       path: RoutesNames.editTaskView,
-      builder: (BuildContext context, GoRouterState state) {
+      pageBuilder: (BuildContext context, GoRouterState state) {
         final data = state.extra as Map<String, dynamic>;
         final TaskEntity model = data['model'] as TaskEntity;
         final String userID = data['userID'] as String;
-        return EditTaskView(
-          userId: userID,
-          model: model,
-        );
+        return _buildPageWithFadeTransition(
+            EditTaskView(userId: userID, model: model));
       },
     ),
     GoRoute(
       name: RoutesNames.profileView,
       path: RoutesNames.profileView,
-      builder: (BuildContext context, GoRouterState state) {
-        return ProfileView();
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return _buildPageWithFadeTransition(const ProfileView());
       },
     ),
   ],
-  errorBuilder: (BuildContext context, GoRouterState state) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Route not found!'),
+  errorPageBuilder: (BuildContext context, GoRouterState state) {
+    return _buildPageWithFadeTransition(
+      const Scaffold(
+        body: Center(
+          child: Text('Route not found!'),
+        ),
       ),
     );
   },
 );
+
+CustomTransitionPage _buildPageWithFadeTransition(Widget child) {
+  return CustomTransitionPage(
+    child: child,
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      return FadeTransition(
+        opacity: animation,
+        child: child,
+      );
+    },
+  );
+}

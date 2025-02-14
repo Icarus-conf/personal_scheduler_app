@@ -30,11 +30,48 @@ class _RegisterViewState extends State<RegisterView> {
   File? _selectedImage;
   final ImagePicker _picker = ImagePicker();
 
-  final _formKey = GlobalKey<FormState>(); // Form key for validation
+  final _formKey = GlobalKey<FormState>();
 
   Future<void> _pickImage() async {
+    showModalBottomSheet(
+      context: context,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
+      ),
+      builder: (BuildContext context) {
+        return Container(
+          padding: EdgeInsets.all(16.w),
+          height: 150.h,
+          child: Column(
+            children: [
+              ListTile(
+                leading:
+                    const Icon(Icons.camera_alt, color: AppColors.primaryColor),
+                title: const Text("Take a Photo"),
+                onTap: () async {
+                  Navigator.pop(context); // Close bottom sheet
+                  await _pickImageFromSource(ImageSource.camera);
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.photo_library,
+                    color: AppColors.primaryColor),
+                title: const Text("Choose from Gallery"),
+                onTap: () async {
+                  Navigator.pop(context); // Close bottom sheet
+                  await _pickImageFromSource(ImageSource.gallery);
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Future<void> _pickImageFromSource(ImageSource source) async {
     try {
-      final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+      final pickedFile = await _picker.pickImage(source: source);
       if (pickedFile != null) {
         setState(() {
           _selectedImage = File(pickedFile.path);

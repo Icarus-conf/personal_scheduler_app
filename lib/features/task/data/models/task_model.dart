@@ -1,8 +1,9 @@
+// ignore_for_file: overridden_fields
 import 'package:hive/hive.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../domain/entities/task_entity.dart';
 
-part 'task_model.g.dart'; // ✅ Required for code generation
+part 'task_model.g.dart';
 
 @HiveType(typeId: 0)
 class TaskModel extends TaskEntity {

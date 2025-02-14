@@ -31,7 +31,7 @@ class _LoginViewState extends State<LoginView> {
   bool isChecked = false;
   bool isObs = true;
 
-  final _formKey = GlobalKey<FormState>(); // Form key for validation
+  final _formKey = GlobalKey<FormState>();
 
   // Email validation function
   String? _validateEmail(String? email) {

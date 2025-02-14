@@ -10,7 +10,7 @@ import 'package:personal_scheduler_app/features/task/domain/entities/task_entity
 Widget buildTaskCard(TaskEntity task, Function(BuildContext)? onPressedEnd,
     Function(BuildContext)? onPressedStart) {
   return Slidable(
-    direction: Axis.horizontal, // Swipe direction
+    direction: Axis.horizontal,
     startActionPane: ActionPane(
       motion: ScrollMotion(),
       children: [

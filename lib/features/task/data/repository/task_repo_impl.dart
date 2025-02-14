@@ -28,14 +28,12 @@ class TaskRepositoryImpl implements TaskRepository {
 
       if (isConnected) {
         final remoteTasks = await remoteDataSource.readTasks(userId, date);
-        // Save to local with user ID using copyWith
         for (var task in remoteTasks) {
           await localDataSource.insertTask(task.copyWith(userId: userId));
         }
 
         return Right(remoteTasks);
       } else {
-        // Pass userId to local data source
         final localTasks = await localDataSource.getTasksForDay(userId, date);
         return Right(localTasks);
       }
