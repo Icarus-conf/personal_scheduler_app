@@ -24,7 +24,7 @@ Personal Scheduler App is a Flutter-based application designed to help users man
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/yourusername/personal_scheduler_app.git
+    git clone https://github.com/Icarus-conf/personal_scheduler_app.git
     cd personal_scheduler_app
     ```
 
