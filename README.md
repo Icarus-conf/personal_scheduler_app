@@ -32,6 +32,7 @@ Personal Scheduler App is a Flutter-based application designed to help users man
 
     ```sh
     flutter pub get
+    flutter pub upgrade --major-versions
     ```
 
 3. Run the app:
