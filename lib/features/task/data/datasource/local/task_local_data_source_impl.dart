@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:personal_scheduler_app/features/task/data/datasource/local/task_local_data_source.dart';
@@ -23,7 +25,13 @@ class TaskLocalDataSourceImpl implements TaskLocalDataSource {
 
   @override
   Future<void> insertTask(TaskModel task) async {
-    await taskBox.put(task.id, task);
+    try {
+      log('Inserting Task: ${task.toJson()}'); // Debugging Log
+      await taskBox.put(task.id, task);
+      log('Task Inserted Successfully!');
+    } catch (e) {
+      log('Error inserting task into Hive: $e');
+    }
   }
 
   @override

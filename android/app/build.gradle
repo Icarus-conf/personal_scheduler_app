@@ -11,7 +11,7 @@ plugins {
 android {
     namespace = "com.example.personal_scheduler_app"
     compileSdk = 34
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "26.3.11579264"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

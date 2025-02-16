@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
@@ -27,17 +29,27 @@ class TaskRepositoryImpl implements TaskRepository {
       final isConnected = await _isConnected();
 
       if (isConnected) {
+        log("🔄 Syncing tasks from Firestore...");
+
         final remoteTasks = await remoteDataSource.readTasks(userId, date);
-        for (var task in remoteTasks) {
+
+        final localTasks = await localDataSource.getTasksForDay(userId, date);
+
+        final mergedTasks = {...localTasks, ...remoteTasks}.toList();
+
+        for (var task in mergedTasks) {
           await localDataSource.insertTask(task.copyWith(userId: userId));
         }
 
-        return Right(remoteTasks);
+        log("✅ Synced tasks successfully!");
+        return Right(mergedTasks);
       } else {
         final localTasks = await localDataSource.getTasksForDay(userId, date);
+        log("📂 Loaded tasks from Hive (offline mode)");
         return Right(localTasks);
       }
     } catch (e) {
+      log("❌ Error syncing tasks: $e");
       return Left(RemoteFailures(e.toString()));
     }
   }
