@@ -252,27 +252,31 @@ class AddTaskViewState extends State<AddTaskView> {
   }
 
   Widget _buildCategoryButtons() {
-    return Wrap(
-      direction: Axis.horizontal,
-      runSpacing: 8.h,
-      spacing: 6.w,
-      children: categories.map((category) {
-        return CustomBtn(
-          fontSize: 14.sp,
-          width: 120.w,
-          bgColor: _category == category
-              ? getCategoryColor(category)
-              : AppColors.backgroundColor,
-          height: 35.h,
-          onPressed: () {
-            setState(() {
-              _category = category;
-            });
-          },
-          text: category,
-          txtColor: _category == category ? Colors.white : Colors.black,
-        );
-      }).toList(),
+    return Align(
+      alignment: Alignment.center,
+      child: Wrap(
+        alignment: WrapAlignment.center,
+        spacing: 10.w,
+        runSpacing: 10.h,
+        children: categories.map((category) {
+          return IntrinsicWidth(
+            child: CustomBtn(
+              fontSize: 14.sp,
+              bgColor: _category == category
+                  ? getCategoryColor(category)
+                  : AppColors.backgroundColor,
+              height: 40.h,
+              onPressed: () {
+                setState(() {
+                  _category = category;
+                });
+              },
+              text: category,
+              txtColor: _category == category ? Colors.white : Colors.black,
+            ),
+          );
+        }).toList(),
+      ),
     );
   }
 }
