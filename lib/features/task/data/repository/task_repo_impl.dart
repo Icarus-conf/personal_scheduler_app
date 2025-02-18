@@ -32,17 +32,17 @@ class TaskRepositoryImpl implements TaskRepository {
         log("🔄 Syncing tasks from Firestore...");
 
         final remoteTasks = await remoteDataSource.readTasks(userId, date);
-
         final localTasks = await localDataSource.getTasksForDay(userId, date);
 
-        final mergedTasks = {...localTasks, ...remoteTasks}.toList();
-
-        for (var task in mergedTasks) {
-          await localDataSource.insertTask(task.copyWith(userId: userId));
+        // ✅ Only insert new tasks, preventing duplicates
+        for (var task in remoteTasks) {
+          if (!localTasks.any((localTask) => localTask.id == task.id)) {
+            await localDataSource.insertTask(task.copyWith(userId: userId));
+          }
         }
 
         log("✅ Synced tasks successfully!");
-        return Right(mergedTasks);
+        return Right(remoteTasks);
       } else {
         final localTasks = await localDataSource.getTasksForDay(userId, date);
         log("📂 Loaded tasks from Hive (offline mode)");
@@ -64,7 +64,15 @@ class TaskRepositoryImpl implements TaskRepository {
       if (isConnected) {
         await remoteDataSource.createTask(taskModel);
       }
-      await localDataSource.insertTask(taskModel);
+
+      // 🔥 Prevent inserting duplicate tasks in Hive
+      final existingTasks =
+          await localDataSource.getTasksForDay(task.userId, task.startDate);
+      final isDuplicate = existingTasks.any((t) => t.id == task.id);
+
+      if (!isDuplicate) {
+        await localDataSource.insertTask(taskModel);
+      }
 
       return const Right(null);
     } catch (e) {

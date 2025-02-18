@@ -62,20 +62,22 @@ class AuthRepoImpl implements AuthRepo {
 
       if (user != null) {
         final doc = await _firestore.collection('users').doc(user.uid).get();
+
         if (doc.exists) {
           final userModel = UserModel.fromFirestore(doc.data()!);
+          log("✅ Auto-login successful for ${userModel.email}");
           return Right(userModel);
         } else {
-          log("No user data found for UID: ${user.uid}");
+          log("⚠️ No user data found for UID: ${user.uid}");
           return const Right(null);
         }
       } else {
-        log("No user is currently logged in");
+        log("❌ No user is currently logged in");
         return const Right(null);
       }
     } catch (e) {
-      log("Error checking auto-login: $e");
-      return Left(RemoteFailures(e.toString()));
+      log("🔥 Error checking auto-login: $e");
+      return Left(RemoteFailures("Failed to check auto-login"));
     }
   }
 
